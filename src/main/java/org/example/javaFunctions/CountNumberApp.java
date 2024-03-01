@@ -1,4 +1,4 @@
-package org.example;
+package org.example.javaFunctions;
 
 
 // Java: Функции 4. Методы Compute в Map

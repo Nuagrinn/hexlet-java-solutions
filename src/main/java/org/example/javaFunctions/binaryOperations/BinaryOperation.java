@@ -1,4 +1,4 @@
-package org.example.binaryOperation;
+package org.example.javaFunctions.binaryOperations;
 
 @FunctionalInterface
 public interface BinaryOperation {

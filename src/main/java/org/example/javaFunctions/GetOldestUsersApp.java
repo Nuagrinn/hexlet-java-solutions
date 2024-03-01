@@ -1,11 +1,20 @@
-package org.example;
+package org.example.javaFunctions;
 
-import org.apache.commons.lang3.ArrayUtils;
+import org.example.User;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
+
+//// Java: Функции 3. Сортировка списков
+// В классе App реализуйте публичный статический метод getOldest()
+//
+//        Метод принимает два параметра:
+//
+//        Список пользователей List<User>
+//        Количество пользователей, целое число. Необязательный, по умолчанию равен 1
+//Метод должен вернуть новый список List<User> самых взрослых пользователей. Количество возвращаемых пользователей
+//задается вторым параметром, который по умолчанию равен единице
 
 public class GetOldestUsersApp {
 

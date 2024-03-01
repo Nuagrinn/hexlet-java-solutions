@@ -1,4 +1,4 @@
-package org.example.binaryOperation;
+package org.example.javaFunctions.binaryOperations;
 
 // Java: Функции 5 Функциональный интерфейс (Functional Interface)
 //Создайте функциональный интерфейс BinaryOperation, который будет представлять бинарную операцию.
