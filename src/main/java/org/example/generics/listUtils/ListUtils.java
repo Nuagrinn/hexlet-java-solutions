@@ -1,4 +1,4 @@
-package org.example.generics;
+package org.example.generics.listUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +12,18 @@ import java.util.function.Predicate;
 //В классе ListUtils создайте обобщенный статический метод filter, который фильтрует коллекцию. Метод принимает список
 // элементов и лямбда-функцию Predicate, которая содержит логику проверки элемента. Метод должен вернуть новый список,
 // в котором отсутствуют элементы, не удовлетворяющие условию
+
+
+//В классе ListUtils создайте обобщенный статический метод findFirstIndex(), который на вход принимает список List
+// неизвестного типа. Единственное, что известно о типе в списке это то, что он всегда будет унаследован от класса Human.
+//
+//        Метод принимает на вход два параметра:
+//
+//        humans - лист неизвестного типа
+//        namePrefix - префикс имени для поиска
+// Метод ищет в списке первого человека, у которого имя начинается с заданного префикса и возвращает его индекс.
+// В случае если ни одного такого человека нет, нужно вернуть значение -1
+
 public class ListUtils<T> {
 
     public  List<T> merge(List<T> list1, List<T> list2) {
@@ -33,15 +45,27 @@ public class ListUtils<T> {
         return filteredList;
     }
 
+    public static <T> Integer findFirstIndex(List<? extends Human> humanList, String prefix) {
+
+        for(var item: humanList) {
+            if(item.getName().startsWith(prefix)) {
+                return humanList.indexOf(item);
+            }
+        }
+
+        return -1;
+    }
+
     public static void main(String[] args) {
 
-        var languages = new ArrayList<>(List.of("java", "javascript", "php", "ruby"));
-        var result = ListUtils.filter(languages, l -> l.startsWith("j"));
-        System.out.println(result); // => ["java", "javascript"]
+        var people = new ArrayList<>(List.of(
+                new Woman("Anna"),
+                new Woman("Gina"),
+                new Woman("Nina")
+        ));
 
-        var numbers = new ArrayList<>(List.of(1, 2, 5, 0, 8, 3));
-        var result1 = ListUtils.filter(numbers, n -> n > 4);
-        System.out.println(result1); // => [5,
+        System.out.println(ListUtils.findFirstIndex(people, "G")); // 1
+        System.out.println(ListUtils.findFirstIndex(people, "O")); // -1
 
     }
 
