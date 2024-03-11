@@ -1,27 +1,15 @@
 package org.example.classes;
 
 // BEGIN (write your solution here)
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-//import lombok.Setter;
-//import lombok.AllArgsConstructor;
 
 @Getter
-//@Setter
-//@AllArgsConstructor
-
+@AllArgsConstructor
 public class ProductsStorage {
 
     private int goodsQuantity;
     private final int maxCapacity;
-
-    ProductsStorage(int goodsQuantity, int maxCapacity){
-
-        this.maxCapacity = maxCapacity;
-        if (maxCapacity >= goodsQuantity){
-            this.goodsQuantity = goodsQuantity;
-        }
-
-    }
 
     public void placeProducts(int goodsToReplace) {
         if((goodsQuantity + goodsToReplace) <= maxCapacity){
@@ -42,6 +30,7 @@ public class ProductsStorage {
 
         ProductsStorage storage = new ProductsStorage(20, 50);
 
+        storage.takeProducts(30);
         storage.placeProducts(1);
 
     }
