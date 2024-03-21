@@ -1,4 +1,4 @@
-package org.example.test.methodsTest;
+package org.example.test.testGet;
 
 import org.apache.commons.lang3.ArrayUtils;
 

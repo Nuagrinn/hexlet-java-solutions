@@ -1,4 +1,4 @@
-package org.example.test.methodsTest;
+package org.example.test.testGet;
 
 //Напишите тесты для метода get(strings, index, defaultValue), который получает элемента массива по индексу,
 // при условии что он существует. В ином случае возвращается defaultValue.
@@ -15,6 +15,8 @@ package org.example.test.methodsTest;
 // 3. Индекс может быть как меньше минимального значения, так и больше длины массива
 
 
+import static junit.framework.TestCase.assertEquals;
+
 //class StringUtilsTest {
 //    public static void testCapitalize() {
 //        // Если результат метода не равен ожидаемому значению
@@ -26,21 +28,24 @@ package org.example.test.methodsTest;
 //}
 public class MethodsTest {
 
-    String[] strings = {"hello", "world"};
+    public static void testGet() {
 
-    public void testGet() {
+        String[] strings = {"hello", "world"};
 
-        if(!strings[1].equals(Methods.get(strings, 1, "value"))) {
+        if (!strings[1].equals(Methods.get(strings, 1, "value"))) {
             throw new AssertionError("Ожидаемое значение не совпадает с фактическим");
         }
-        if(!"value".equals((Methods.get(strings, 2, "value")))) {
+        if (!"value".equals((Methods.get(strings, 2, "value")))) {
             throw new AssertionError("Не получено дефолтно значение");
         }
-        if(!"value".equals((Methods.get(strings, -2, "value")))) {
+        if (!"value".equals((Methods.get(strings, -2, "value")))) {
             throw new AssertionError("Неправильная работа при индексе меньше минимального значения");
         }
         System.out.println("Тесты пройдены!");
+    }
 
+    public static void main(String[] args) {
+        testGet();
     }
 
 }
